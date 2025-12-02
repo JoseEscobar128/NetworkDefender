@@ -40,7 +40,7 @@ public class Meta : MonoBehaviour
         // Nivel 1 → Bonus 1 (ej: escena 7)
         if (select_level == 1)
         {
-            StartCoroutine(PlayGoalAndThenLoad(7));
+            StartCoroutine(PlayGoalAndThenLoad(5));
             return;
         }
 

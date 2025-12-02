@@ -87,6 +87,9 @@ public class Alex : MonoBehaviour
 
     void Start()
     {
+        numVidas = 5;
+        numCorazones = maxCorazones;
+
         audioSource = gameObject.AddComponent<AudioSource>();
 
         // Referencias a componentes
