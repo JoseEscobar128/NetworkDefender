@@ -1,0 +1,1874 @@
+fileFormatVersion: 2
+guid: 22e8b3b9eb1af4f5fb0f2e9314677d0d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5612429250947724234
+    second: cam-Sheet_0
+  - first:
+      213: 4341291061846253591
+    second: cam-Sheet_1
+  - first:
+      213: 1404642056122682274
+    second: cam-Sheet_2
+  - first:
+      213: 1199402155122685353
+    second: cam-Sheet_3
+  - first:
+      213: 8836380269385041285
+    second: cam-Sheet_4
+  - first:
+      213: 905792211246071770
+    second: cam-Sheet_5
+  - first:
+      213: 6775029291082840419
+    second: cam-Sheet_6
+  - first:
+      213: -1228573025902939921
+    second: cam-Sheet_7
+  - first:
+      213: 8478069376703007534
+    second: cam-Sheet_8
+  - first:
+      213: 6694096335089744034
+    second: cam-Sheet_9
+  - first:
+      213: -435893892355641216
+    second: cam-Sheet_10
+  - first:
+      213: 3488211158269627107
+    second: cam-Sheet_11
+  - first:
+      213: -4622492307616546991
+    second: cam-Sheet_12
+  - first:
+      213: -421488586659751700
+    second: cam-Sheet_13
+  - first:
+      213: -3973143607157618948
+    second: cam-Sheet_14
+  - first:
+      213: -562634330595194999
+    second: cam-Sheet_15
+  - first:
+      213: -2673610201441021840
+    second: cam-Sheet_16
+  - first:
+      213: -7733494778790032960
+    second: cam-Sheet_17
+  - first:
+      213: -8888899290083736720
+    second: cam-Sheet_18
+  - first:
+      213: 5894560447154961251
+    second: cam-Sheet_19
+  - first:
+      213: 822970828365826079
+    second: cam-Sheet_20
+  - first:
+      213: 5213724146770114392
+    second: cam-Sheet_21
+  - first:
+      213: 1691567614035775234
+    second: cam-Sheet_22
+  - first:
+      213: 2379814555022640637
+    second: cam-Sheet_23
+  - first:
+      213: 5721369562051621698
+    second: cam-Sheet_24
+  - first:
+      213: -7296485448331482515
+    second: cam-Sheet_25
+  - first:
+      213: 8694215894312604789
+    second: cam-Sheet_26
+  - first:
+      213: 6705269242019556698
+    second: cam-Sheet_27
+  - first:
+      213: 314600490666002437
+    second: cam-Sheet_28
+  - first:
+      213: -6054661946666725575
+    second: cam-Sheet_29
+  - first:
+      213: 6274279647258945834
+    second: cam-Sheet_30
+  - first:
+      213: 5133721726588922283
+    second: cam-Sheet_31
+  - first:
+      213: 4780939741836090317
+    second: cam-Sheet_32
+  - first:
+      213: -1383853247084814026
+    second: cam-Sheet_33
+  - first:
+      213: -7011290804928777152
+    second: cam-Sheet_34
+  - first:
+      213: 8252306201839241748
+    second: cam-Sheet_35
+  - first:
+      213: 8475795307603284249
+    second: cam-Sheet_36
+  - first:
+      213: 1204034757899419164
+    second: cam-Sheet_37
+  - first:
+      213: -5597492418277642581
+    second: cam-Sheet_38
+  - first:
+      213: 4447180312062178120
+    second: cam-Sheet_39
+  - first:
+      213: -2036406941465968969
+    second: cam-Sheet_40
+  - first:
+      213: -5963714047156311364
+    second: cam-Sheet_41
+  - first:
+      213: -958812381208928646
+    second: cam-Sheet_42
+  - first:
+      213: -899936578321183103
+    second: cam-Sheet_43
+  - first:
+      213: 5402047729062233962
+    second: cam-Sheet_44
+  - first:
+      213: 8960731803268963036
+    second: cam-Sheet_45
+  - first:
+      213: -1207761783994465433
+    second: cam-Sheet_46
+  - first:
+      213: -7701619437633620436
+    second: cam-Sheet_47
+  - first:
+      213: 2779478034908138948
+    second: cam-Sheet_48
+  - first:
+      213: -6852231679932881855
+    second: cam-Sheet_49
+  - first:
+      213: 7347670410914504412
+    second: cam-Sheet_50
+  - first:
+      213: 1522010518251016822
+    second: cam-Sheet_51
+  - first:
+      213: -6295780626325543884
+    second: cam-Sheet_52
+  - first:
+      213: -661114653065255147
+    second: cam-Sheet_53
+  - first:
+      213: -3077874917721552865
+    second: cam-Sheet_54
+  - first:
+      213: -4348768168777034435
+    second: cam-Sheet_55
+  - first:
+      213: 7346548573989057243
+    second: cam-Sheet_56
+  - first:
+      213: 8274246976502059077
+    second: cam-Sheet_57
+  - first:
+      213: -5259275624779717295
+    second: cam-Sheet_58
+  - first:
+      213: 7405853002563207522
+    second: cam-Sheet_59
+  - first:
+      213: 8583425182279003969
+    second: cam-Sheet_60
+  - first:
+      213: -1950370932733154974
+    second: cam-Sheet_61
+  - first:
+      213: -994693038755056341
+    second: cam-Sheet_62
+  - first:
+      213: 3732897020416267395
+    second: cam-Sheet_63
+  - first:
+      213: -3462876505568175985
+    second: cam-Sheet_64
+  - first:
+      213: 3408339211708296362
+    second: cam-Sheet_65
+  - first:
+      213: 7040286711503073099
+    second: cam-Sheet_66
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: cam-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63ccf3a0555ac12b0800000000000000
+      internalID: -5612429250947724234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 710ace7383d5f3c30800000000000000
+      internalID: 4341291061846253591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 146
+        y: 204
+        width: 26
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ab44c7028a4e7310800000000000000
+      internalID: 1404642056122682274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 204
+        width: 28
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a5fce6c7e125a010800000000000000
+      internalID: 1199402155122685353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 204
+        width: 32
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 58547f0b90121aa70800000000000000
+      internalID: 8836380269385041285
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: adf33af8735029c00800000000000000
+      internalID: 905792211246071770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 369fbdd9e3db50e50800000000000000
+      internalID: 6775029291082840419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 467
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fe0bd6a975b33fee0800000000000000
+      internalID: -1228573025902939921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2b008bed2728a570800000000000000
+      internalID: 8478069376703007534
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 595
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a8b441662536ec50800000000000000
+      internalID: 6694096335089744034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 659
+        y: 204
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 080316a70d463f9f0800000000000000
+      internalID: -435893892355641216
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 723
+        y: 204
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3ea073e219d986030800000000000000
+      internalID: 3488211158269627107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 204
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15f3a8bbcbb99dfb0800000000000000
+      internalID: -4622492307616546991
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 851
+        y: 204
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce893431d52962af0800000000000000
+      internalID: -421488586659751700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 915
+        y: 204
+        width: 24
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf681cd90fe8cd8c0800000000000000
+      internalID: -3973143607157618948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 979
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9870f6aae0f1138f0800000000000000
+      internalID: -562634330595194999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1043
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0705f3befad65ead0800000000000000
+      internalID: -2673610201441021840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1107
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c9c1e5f87b1da490800000000000000
+      internalID: -7733494778790032960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1171
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 073465ae03944a480800000000000000
+      internalID: -8888899290083736720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1235
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b3db7fe7fadc150800000000000000
+      internalID: 5894560447154961251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1299
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f18014dab97cb6b00800000000000000
+      internalID: 822970828365826079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1363
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 857fb1dec7eda5840800000000000000
+      internalID: 5213724146770114392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1427
+        y: 204
+        width: 24
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20f482c58c7a97710800000000000000
+      internalID: 1691567614035775234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1491
+        y: 202
+        width: 24
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df5cd6f9abcc60120800000000000000
+      internalID: 2379814555022640637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1555
+        y: 204
+        width: 24
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 243b1d6bd43666f40800000000000000
+      internalID: 5721369562051621698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 141
+        width: 70
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6a2567a42dadba90800000000000000
+      internalID: -7296485448331482515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 141
+        width: 10
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 574de0dba4f08a870800000000000000
+      internalID: 8694215894312604789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 143
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5daded79d6ed0d50800000000000000
+      internalID: 6705269242019556698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 149
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5088f4cba7fad5400800000000000000
+      internalID: 314600490666002437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 149
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 93fcad9d90589fba0800000000000000
+      internalID: -6054661946666725575
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 149
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a29255cb818b21750800000000000000
+      internalID: 6274279647258945834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 149
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba9a901f5b4ae3740800000000000000
+      internalID: 5133721726588922283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 149
+        width: 10
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcb10bc5d5f495240800000000000000
+      internalID: 4780939741836090317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 147
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6312d32cdc09bcce0800000000000000
+      internalID: -1383853247084814026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 144
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 044f14b0924e2be90800000000000000
+      internalID: -7011290804928777152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 141
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41a816a94c4168270800000000000000
+      internalID: 8252306201839241748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 141
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911dd92fce210a570800000000000000
+      internalID: 8475795307603284249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 141
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e71d9ab3795b010800000000000000
+      internalID: 1204034757899419164
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 141
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bae6e976d46b152b0800000000000000
+      internalID: -5597492418277642581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 77
+        width: 69
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843b3908eee87bd30800000000000000
+      internalID: 4447180312062178120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_40
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 77
+        width: 10
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7bef7c31daa3db3e0800000000000000
+      internalID: -2036406941465968969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_41
+      rect:
+        serializedVersion: 2
+        x: 602
+        y: 79
+        width: 10
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cbaad35dba1ac3da0800000000000000
+      internalID: -5963714047156311364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_42
+      rect:
+        serializedVersion: 2
+        x: 666
+        y: 85
+        width: 10
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7e9bc3283d91b2f0800000000000000
+      internalID: -958812381208928646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_43
+      rect:
+        serializedVersion: 2
+        x: 730
+        y: 85
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e09c83378c283f0800000000000000
+      internalID: -899936578321183103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_44
+      rect:
+        serializedVersion: 2
+        x: 794
+        y: 86
+        width: 10
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a67c57ec9cde7fa40800000000000000
+      internalID: 5402047729062233962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_45
+      rect:
+        serializedVersion: 2
+        x: 858
+        y: 85
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cda546d591aea5c70800000000000000
+      internalID: 8960731803268963036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_46
+      rect:
+        serializedVersion: 2
+        x: 922
+        y: 85
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 763c7b37e0b2d3fe0800000000000000
+      internalID: -1207761783994465433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_47
+      rect:
+        serializedVersion: 2
+        x: 986
+        y: 85
+        width: 10
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c26ba982de95e1590800000000000000
+      internalID: -7701619437633620436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_48
+      rect:
+        serializedVersion: 2
+        x: 1050
+        y: 80
+        width: 10
+        height: 34
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4cd43b3eb80b29620800000000000000
+      internalID: 2779478034908138948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_49
+      rect:
+        serializedVersion: 2
+        x: 1114
+        y: 77
+        width: 10
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1442cee779bf7e0a0800000000000000
+      internalID: -6852231679932881855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_50
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 77
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cde15312f4b28f560800000000000000
+      internalID: 7347670410914504412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_51
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 77
+        width: 10
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67292cc90844f1510800000000000000
+      internalID: 1522010518251016822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_52
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 77
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 434641870e4e0a8a0800000000000000
+      internalID: -6295780626325543884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_53
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 13
+        width: 70
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5176d3cc9bf33d6f0800000000000000
+      internalID: -661114653065255147
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_54
+      rect:
+        serializedVersion: 2
+        x: 534
+        y: 13
+        width: 18
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f184f12d1113945d0800000000000000
+      internalID: -3077874917721552865
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_55
+      rect:
+        serializedVersion: 2
+        x: 598
+        y: 19
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d35d489246216a3c0800000000000000
+      internalID: -4348768168777034435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_56
+      rect:
+        serializedVersion: 2
+        x: 662
+        y: 20
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd235cd110f24f560800000000000000
+      internalID: 7346548573989057243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_57
+      rect:
+        serializedVersion: 2
+        x: 726
+        y: 21
+        width: 19
+        height: 29
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 540514a49c704d270800000000000000
+      internalID: 8274246976502059077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_58
+      rect:
+        serializedVersion: 2
+        x: 790
+        y: 22
+        width: 20
+        height: 27
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 15562212fac4307b0800000000000000
+      internalID: -5259275624779717295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_59
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 21
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2614a846110e6c660800000000000000
+      internalID: 7405853002563207522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_60
+      rect:
+        serializedVersion: 2
+        x: 918
+        y: 21
+        width: 23
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14fe1e1f9b37e1770800000000000000
+      internalID: 8583425182279003969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_61
+      rect:
+        serializedVersion: 2
+        x: 982
+        y: 19
+        width: 24
+        height: 30
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 269613e58f3eee4e0800000000000000
+      internalID: -1950370932733154974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_62
+      rect:
+        serializedVersion: 2
+        x: 1046
+        y: 16
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b25737c83f32232f0800000000000000
+      internalID: -994693038755056341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_63
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 13
+        width: 21
+        height: 28
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3849605ff0aedc330800000000000000
+      internalID: 3732897020416267395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_64
+      rect:
+        serializedVersion: 2
+        x: 1174
+        y: 13
+        width: 19
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f8810905a2461ffc0800000000000000
+      internalID: -3462876505568175985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_65
+      rect:
+        serializedVersion: 2
+        x: 1238
+        y: 13
+        width: 18
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aac68e3747adc4f20800000000000000
+      internalID: 3408339211708296362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: cam-Sheet_66
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 13
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4f2b0c867f14b160800000000000000
+      internalID: 7040286711503073099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 303a31ccf3d7640f981a48600e9302c4
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      cam-Sheet_0: -5612429250947724234
+      cam-Sheet_1: 4341291061846253591
+      cam-Sheet_10: -435893892355641216
+      cam-Sheet_11: 3488211158269627107
+      cam-Sheet_12: -4622492307616546991
+      cam-Sheet_13: -421488586659751700
+      cam-Sheet_14: -3973143607157618948
+      cam-Sheet_15: -562634330595194999
+      cam-Sheet_16: -2673610201441021840
+      cam-Sheet_17: -7733494778790032960
+      cam-Sheet_18: -8888899290083736720
+      cam-Sheet_19: 5894560447154961251
+      cam-Sheet_2: 1404642056122682274
+      cam-Sheet_20: 822970828365826079
+      cam-Sheet_21: 5213724146770114392
+      cam-Sheet_22: 1691567614035775234
+      cam-Sheet_23: 2379814555022640637
+      cam-Sheet_24: 5721369562051621698
+      cam-Sheet_25: -7296485448331482515
+      cam-Sheet_26: 8694215894312604789
+      cam-Sheet_27: 6705269242019556698
+      cam-Sheet_28: 314600490666002437
+      cam-Sheet_29: -6054661946666725575
+      cam-Sheet_3: 1199402155122685353
+      cam-Sheet_30: 6274279647258945834
+      cam-Sheet_31: 5133721726588922283
+      cam-Sheet_32: 4780939741836090317
+      cam-Sheet_33: -1383853247084814026
+      cam-Sheet_34: -7011290804928777152
+      cam-Sheet_35: 8252306201839241748
+      cam-Sheet_36: 8475795307603284249
+      cam-Sheet_37: 1204034757899419164
+      cam-Sheet_38: -5597492418277642581
+      cam-Sheet_39: 4447180312062178120
+      cam-Sheet_4: 8836380269385041285
+      cam-Sheet_40: -2036406941465968969
+      cam-Sheet_41: -5963714047156311364
+      cam-Sheet_42: -958812381208928646
+      cam-Sheet_43: -899936578321183103
+      cam-Sheet_44: 5402047729062233962
+      cam-Sheet_45: 8960731803268963036
+      cam-Sheet_46: -1207761783994465433
+      cam-Sheet_47: -7701619437633620436
+      cam-Sheet_48: 2779478034908138948
+      cam-Sheet_49: -6852231679932881855
+      cam-Sheet_5: 905792211246071770
+      cam-Sheet_50: 7347670410914504412
+      cam-Sheet_51: 1522010518251016822
+      cam-Sheet_52: -6295780626325543884
+      cam-Sheet_53: -661114653065255147
+      cam-Sheet_54: -3077874917721552865
+      cam-Sheet_55: -4348768168777034435
+      cam-Sheet_56: 7346548573989057243
+      cam-Sheet_57: 8274246976502059077
+      cam-Sheet_58: -5259275624779717295
+      cam-Sheet_59: 7405853002563207522
+      cam-Sheet_6: 6775029291082840419
+      cam-Sheet_60: 8583425182279003969
+      cam-Sheet_61: -1950370932733154974
+      cam-Sheet_62: -994693038755056341
+      cam-Sheet_63: 3732897020416267395
+      cam-Sheet_64: -3462876505568175985
+      cam-Sheet_65: 3408339211708296362
+      cam-Sheet_66: 7040286711503073099
+      cam-Sheet_7: -1228573025902939921
+      cam-Sheet_8: 8478069376703007534
+      cam-Sheet_9: 6694096335089744034
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
