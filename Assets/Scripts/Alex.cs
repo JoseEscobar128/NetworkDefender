@@ -3,119 +3,111 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.SceneManagement;
 
-
 /// <summary>
-/// Controla el comportamiento del jugador: movimiento, ataque, vidas, corazones y knockback.
+/// Controla el comportamiento del jugador "Alex":
+/// - Movimiento y corrida
+/// - Ataque
+/// - Vidas, corazones y recolección de items (cherries y piñas)
+/// - Knockback al recibir daño
+/// - Invulnerabilidad temporal
+/// - Power-ups
+/// - UI de corazones, vidas, cherries y timer
 /// </summary>
 public class Alex : MonoBehaviour
 {
-
     private AudioSource audioSource;
 
     [Header("Sonidos")]
-    public AudioClip damageSound;
-    public AudioClip AttackSound;
-
-
+    public AudioClip damageSound; // Sonido al recibir daño
+    public AudioClip AttackSound; // Sonido al atacar
 
     [Header("Movimiento")]
-    public float speed = 5f;                 // Velocidad de movimiento
-    public float runMultiplier = 1.8f;
+    public float speed = 5f;        // Velocidad de movimiento base
+    public float runMultiplier = 1.8f; // Multiplicador de velocidad al correr
 
+    private Rigidbody2D rb;         // Referencia al Rigidbody2D para física
+    private Vector2 moveInput;      // Entrada de movimiento horizontal y vertical
+    private Animator anim;          // Controlador de animaciones
+    private SpriteRenderer sr;      // SpriteRenderer para invertir la dirección
+    private Vector2 lastDir = Vector2.down; // Última dirección usada para ataques/animación
 
-    private Rigidbody2D rb;                    // Referencia al Rigidbody2D
-    private Vector2 moveInput;                 // Entrada de movimiento (Horizontal/Vertical)
-    private Animator anim;                     // Controlador de animaciones
-    private SpriteRenderer sr;                 // Sprite para invertir dirección
-    private Vector2 lastDir = Vector2.down;    // Última dirección de movimiento usada para ataque/animación
-
-    private float knockbackTimer = 0f;
-    private Vector2 knockbackDir;
+    private float knockbackTimer = 0f; // Temporizador de knockback
+    private Vector2 knockbackDir;      // Dirección de knockback
 
     [Header("Ataque")]
-    public bool isAttacking = false;           // Si el jugador está atacando
-    public bool canAttack = true;              // Si puede atacar
-    public int attackDamage = 2;               // Daño del ataque
-    public float attackRange = 10f;            // Alcance del ataque
-    public LayerMask enemyLayer;               // Capa donde están los enemigos
+    public bool isAttacking = false;   // Si actualmente se está atacando
+    public bool canAttack = true;      // Si puede atacar
+    public int attackDamage = 2;       // Daño que causa el ataque
+    public float attackRange = 10f;    // Alcance del ataque
+    public LayerMask enemyLayer;       // Capa de enemigos a detectar
 
     [Header("Vidas y Corazones")]
-    public static int numVidas = 5;                   // Número de vidas del jugador
-    public static int numCorazones = 3;               // Corazones actuales
-    public static int maxCorazones = 3;               // Máximo de corazones
-    public static int numCherry = 0;                  // Contador de "cherries" recogidos
-    public TextMeshProUGUI textoVidas;         // Texto que muestra vidas
-    public UnityEngine.UI.Image corazon1;      // Imagen del primer corazón
-    public UnityEngine.UI.Image corazon2;      // Imagen del segundo corazón
-    public UnityEngine.UI.Image corazon3;      // Imagen del tercer corazón
+    public static int numVidas = 5;    // Número total de vidas del jugador
+    public static int numCorazones = 3; // Corazones actuales
+    public static int maxCorazones = 3; // Máximo de corazones
+    public static int numCherry = 0;    // Contador de cherries recogidos
+    public TextMeshProUGUI textoVidas;  // UI que muestra número de vidas
+    public UnityEngine.UI.Image corazon1; // Imagen del corazón 1
+    public UnityEngine.UI.Image corazon2; // Imagen del corazón 2
+    public UnityEngine.UI.Image corazon3; // Imagen del corazón 3
 
-    [Header("piñas")]
-    public static int numPina = 0;  // contador global
-    public TextMeshProUGUI textoPina; // si tienes texto de piñas
-    public int maxVidas = 5;         // vida máxima
-
+    [Header("Piñas")]
+    public static int numPina = 0;       // Contador global de piñas
+    public TextMeshProUGUI textoPina;    // UI de piñas (si aplica)
+    public int maxVidas = 5;             // Vida máxima
 
     [Header("UI")]
-    public TextMeshProUGUI textoCherry;
-
-
-
+    public TextMeshProUGUI textoCherry; // UI de cherries
 
     [Header("Knockback")]
-    public float knockbackForce = 10f;         // Fuerza de retroceso al recibir daño
-    public float knockbackTime = 0.3f;        // Duración del retroceso
-    private bool knockbackActive = false;      // Si actualmente se está aplicando knockback
-
+    public float knockbackForce = 10f;   // Fuerza aplicada al recibir daño
+    public float knockbackTime = 0.3f;   // Duración del knockback
+    private bool knockbackActive = false; // Estado de knockback activo
 
     [Header("Invulnerabilidad")]
-    public float invulnerableTime = 0.5f; // Tiempo durante el cual no puede recibir daño
-    public bool isInvulnerable = false;  // Estado actual de invulnerabilidad
+    public float invulnerableTime = 0.5f; // Tiempo que dura la invulnerabilidad tras recibir daño
+    public bool isInvulnerable = false;   // Estado de invulnerabilidad actual
 
     [Header("Power-Up")]
-    public bool isPoweredUp = false; // Estado de poder activo
+    public bool isPoweredUp = false;      // Estado de power-up activo
 
     [Header("Hitbox")]
-    public GameObject hitbox;
+    public GameObject hitbox;             // Hitbox usada al atacar
 
     [Header("Timer de Nivel")]
-    public float levelTime = 250f; // tiempo total del nivel en segundos
-    public TextMeshProUGUI textoTimer;
-    private float timerTick = 0f;// para contar segundos reales
-
-
-
+    public float levelTime = 250f;        // Tiempo total del nivel en segundos
+    public TextMeshProUGUI textoTimer;    // UI del timer
+    private float timerTick = 0f;         // Para contar tiempo real
 
     void Start()
     {
+        // Inicializar vidas y corazones
         numVidas = 5;
         numCorazones = maxCorazones;
 
+        // Agregar componente de audio si no existe
         audioSource = gameObject.AddComponent<AudioSource>();
 
-        // Referencias a componentes
+        // Obtener referencias a componentes
         rb = GetComponent<Rigidbody2D>();
         anim = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
 
-        // Actualizar UI al iniciar
+        // Actualizar la UI al iniciar
         UpdateHeartsUI();
         UpdateVidasUI();
 
         if (textoCherry != null)
-        {
             textoCherry.SetText("" + numCherry);
-        }
 
         timerTick = Time.time;
         if (textoTimer != null)
             textoTimer.SetText(levelTime.ToString());
-
-
     }
 
     void Update()
     {
-        // Leer input del jugador (teclas WASD / flechas)
+        // Leer input del jugador (WASD / Flechas)
         moveInput.x = Input.GetAxisRaw("Horizontal");
         moveInput.y = Input.GetAxisRaw("Vertical");
 
@@ -140,40 +132,33 @@ public class Alex : MonoBehaviour
         if (canAttack && Input.GetKeyDown(KeyCode.Space))
             Attack();
 
-        // Si no puede atacar, asegurarse que no quede en ataque
+        // Si no puede atacar, asegurar que no quede en ataque
         if (!canAttack)
-        {
             isAttacking = false;
-        }
 
-
-        // Timer de nivel
-        // Timer de nivel
+        // Timer de nivel (comentado)
         /*
-        levelTime -= Time.deltaTime; // descontar segundos reales
+        levelTime -= Time.deltaTime;
         if (textoTimer != null)
-            textoTimer.SetText(Mathf.Ceil(levelTime).ToString()); // mostrar segundos enteros
+            textoTimer.SetText(Mathf.Ceil(levelTime).ToString());
 
         if (levelTime <= 0)
         {
-            levelTime = 0; // asegurar que no sea negativo
-                          
-        
-                Die();
+            levelTime = 0;
+            Die();
         }
         */
-
-
     }
 
     /// <summary>
-    /// Método para atacar a enemigos cercanos
+    /// Método que inicia el ataque del jugador
     /// </summary>
     void Attack()
     {
         isAttacking = true;
         audioSource.PlayOneShot(AttackSound);
-        // Animación de ataque según la última dirección
+
+        // Actualizar animación según última dirección
         anim.SetFloat("Horizontal", lastDir.x);
         anim.SetFloat("Vertical", lastDir.y);
         anim.SetTrigger("Attack");
@@ -182,17 +167,21 @@ public class Alex : MonoBehaviour
         hitbox.SetActive(true);
 
         // Desactivar hitbox al final del ataque
-        Invoke(nameof(EndAttack), 0.6f); // 0.3f = duración del ataque
+        Invoke(nameof(EndAttack), 0.6f);
     }
 
+    /// <summary>
+    /// Termina el ataque y desactiva la hitbox
+    /// </summary>
     void EndAttack()
     {
         isAttacking = false;
         hitbox.SetActive(false);
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
+        // Aplicar knockback si está activo
         if (knockbackTimer > 0f)
         {
             rb.linearVelocity = knockbackDir;
@@ -206,27 +195,21 @@ public class Alex : MonoBehaviour
         // Movimiento físico
         rb.linearVelocity = moveInput * speed * (runningNow ? runMultiplier : 1f);
 
-        // Guardar última dirección solo si hay input (para ataques)
+        // Guardar última dirección solo si hay input
         if (hasInput)
             lastDir = moveInput.normalized;
 
-        // --- ANIMACIÓN ---
-        // Usar la dirección real de velocidad si nos movemos, sino lastDir
+        // Animación según velocidad o última dirección
         Vector2 animDir = rb.linearVelocity.sqrMagnitude > 0.01f ? rb.linearVelocity.normalized : lastDir;
-
         anim.SetFloat("Horizontal", animDir.x);
         anim.SetFloat("Vertical", animDir.y);
         anim.SetFloat("Speed", rb.linearVelocity.magnitude);
-
         anim.SetBool("IsRunning", runningNow);
     }
 
-
-
-
-
-
-    // Actualiza UI de corazones
+    /// <summary>
+    /// Actualiza la UI de corazones
+    /// </summary>
     void UpdateHeartsUI()
     {
         corazon1.enabled = numCorazones >= 1;
@@ -234,7 +217,9 @@ public class Alex : MonoBehaviour
         corazon3.enabled = numCorazones >= 3;
     }
 
-    // Actualiza UI de vidas
+    /// <summary>
+    /// Actualiza la UI de vidas
+    /// </summary>
     void UpdateVidasUI()
     {
         if (textoVidas != null)
@@ -242,41 +227,35 @@ public class Alex : MonoBehaviour
     }
 
     /// <summary>
-    /// Método que aplica daño al jugador
+    /// Aplica daño al jugador, knockback e invulnerabilidad temporal
     /// </summary>
+    /// <param name="damage">Cantidad de daño</param>
+    /// <param name="attackerPos">Posición del atacante</param>
     public void TakeDamage(int damage, Vector3 attackerPos)
     {
-
-
-        if (isInvulnerable) return; // Si está invulnerable, no hace nada
+        if (isInvulnerable) return;
 
         // Iniciar invulnerabilidad
         isInvulnerable = true;
         StartCoroutine(ResetInvulnerability());
 
-        // Iniciar knockback
+        // Aplicar knockback
         knockbackDir = (transform.position - attackerPos).normalized * knockbackForce;
         knockbackTimer = knockbackTime;
 
-        // Animación de golpe según dirección
+        // Reproducir animación y sonido de golpe
         if (Mathf.Abs(lastDir.x) > Mathf.Abs(lastDir.y))
         {
             audioSource.PlayOneShot(damageSound);
-            if (lastDir.x > 0)
-                anim.Play("Alex_Hit_Right");
-            else
-                anim.Play("Alex_Hit_Left");
+            anim.Play(lastDir.x > 0 ? "Alex_Hit_Right" : "Alex_Hit_Left");
         }
         else
         {
             audioSource.PlayOneShot(damageSound);
-            if (lastDir.y > 0)
-                anim.Play("Alex_Hit_Up");
-            else
-                anim.Play("Alex_hit_Down");
+            anim.Play(lastDir.y > 0 ? "Alex_Hit_Up" : "Alex_hit_Down");
         }
 
-        // Reducir corazones / vidas
+        // Reducir corazones o vidas
         if (numCorazones > damage)
         {
             numCorazones -= damage;
@@ -290,40 +269,45 @@ public class Alex : MonoBehaviour
             UpdateVidasUI();
 
             if (numVidas <= 0)
-                Die(); // Muerte del jugador
+                Die();
         }
     }
 
-    // Coroutine para terminar invulnerabilidad
+    /// <summary>
+    /// Coroutine para terminar la invulnerabilidad
+    /// </summary>
     IEnumerator ResetInvulnerability()
     {
         yield return new WaitForSeconds(invulnerableTime);
         isInvulnerable = false;
     }
 
-    // Muerte del jugador
+    /// <summary>
+    /// Muerte del jugador
+    /// </summary>
     void Die()
     {
         anim.SetTrigger("Death");
         canAttack = false;
         rb.linearVelocity = Vector2.zero;
 
-        // Esperar 1 segundo antes de cambiar de escena para que se vea la animación
+        // Esperar animación y luego cargar GameOver
         Invoke(nameof(LoadGameOver), 1f);
 
-        // Destruir objeto jugador
         Destroy(gameObject, 1f);
     }
 
-    // Método que carga la escena de GameOver
+    /// <summary>
+    /// Carga la escena de GameOver
+    /// </summary>
     void LoadGameOver()
     {
-        SceneManager.LoadScene("GameOver"); // Asegúrate que la escena se llame exactamente "GameOver"
+        SceneManager.LoadScene("GameOver");
     }
 
-
-    // Método para recolectar cherries y regenerar corazones
-    // Cada cherry = +1 corazón
+    /// <summary>
+    /// Recolecta un cherry y regenera un corazón si no está al máximo
+    /// </summary>
     public void CollectCherry()
     {
         if (numCorazones < maxCorazones)
@@ -331,13 +315,11 @@ public class Alex : MonoBehaviour
             numCorazones++;
             UpdateHeartsUI();
         }
-        else
-        {
-            // Si ya tienes corazones al máximo, no hace nada o puedes decidir dar extra si quieres
-        }
     }
 
-    // Cada piña = +1 vida
+    /// <summary>
+    /// Recolecta una piña y regenera una vida si no está al máximo
+    /// </summary>
     public void CollectPina()
     {
         if (numVidas < maxVidas)
@@ -347,16 +329,20 @@ public class Alex : MonoBehaviour
         }
     }
 
-
-
-
+    /// <summary>
+    /// Activa un power-up por un tiempo determinado
+    /// </summary>
+    /// <param name="time">Duración en segundos del power-up</param>
     public void ActivatePowerUp(float time)
     {
         isPoweredUp = true;
         StartCoroutine(DeactivatePowerUpAfterTime(time));
     }
 
-    private IEnumerator DeactivatePowerUpAfterTime(float time)
+    /// <summary>
+    /// Coroutine que desactiva el power-up después de cierto tiempo
+    /// </summary>
+    IEnumerator DeactivatePowerUpAfterTime(float time)
     {
         yield return new WaitForSeconds(time);
         isPoweredUp = false;
