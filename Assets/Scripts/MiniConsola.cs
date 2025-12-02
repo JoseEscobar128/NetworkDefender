@@ -1,15 +1,19 @@
 using UnityEngine;
 using TMPro;
-using UnityEngine.UI; 
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MiniConsola : MonoBehaviour
 {
     [Header("UI References")]
     public TMP_InputField inputField;
     public TMP_Text outputText;
-    public ScrollRect scrollRect; 
+    public ScrollRect scrollRect;
 
-    // Estados de la consola (Cisco Modes)
+    [Header("Configuración Juego")]
+    public string nombreEscenaMapa = "Mapa";
+
     private enum ConsoleState
     {
         UserMode,       // Switch>
@@ -19,21 +23,28 @@ public class MiniConsola : MonoBehaviour
     }
 
     private ConsoleState currentState;
+    private bool nivelCompletado = false;
 
     private void Start()
     {
         currentState = ConsoleState.UserMode;
         outputText.text = "";
-        
-        // Mensaje de bienvenida inicial
+
+        // Mensaje inicial
         AddLine("Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M)");
         AddLine("System Init... OK.");
-        AddLine("<color=yellow>NODE: ¡Alex! Usa el comando 'help' si no sabes qué hacer.</color>"); // Pista inicial
         AddLine("");
-        AddLine(GetPrompt()); 
-
+        AddNodeMessage("¡Alex! El servidor está aislado. Usa el comando 'help' si no sabes qué hacer."); 
+        AddLine("");
+        
+        // NO imprimimos el prompt aquí abajo todavía, 
+        // para que la primera línea la ponga el usuario al escribir.
+        
         inputField.onSubmit.AddListener(ProcessCommand);
         inputField.ActivateInputField();
+        
+        // Forzamos el scroll al inicio por si acaso
+        ScrollToBottom();
     }
 
     string GetPrompt()
@@ -48,153 +59,185 @@ public class MiniConsola : MonoBehaviour
         }
     }
 
+    // --- CORRECCIÓN DEL AUTOSCROLL ---
+    public void ScrollToBottom()
+    {
+        // Forzamos a Unity a actualizar los lienzos (Canvas) YA MISMO
+        // Esto recalcula el tamaño del texto antes de hacer el scroll.
+        if (scrollRect != null)
+        {
+            StartCoroutine(ForceScrollDown());
+        }
+    }
+
+    IEnumerator ForceScrollDown()
+    {
+        // Esperamos al final del frame para asegurar que el texto se pintó
+        yield return new WaitForEndOfFrame();
+        
+        // Forzamos actualización de layout
+        Canvas.ForceUpdateCanvases();
+        
+        // Mandamos el scroll al fondo (0 es abajo, 1 es arriba)
+        scrollRect.verticalNormalizedPosition = 0f;
+        
+        // A veces se necesita un segundo empujón frame siguiente
+        Canvas.ForceUpdateCanvases();
+    }
+
     void ProcessCommand(string cmd)
     {
+        if (nivelCompletado) return;
+
+        // Limpiamos el comando (quitar espacios, minúsculas)
         string cleanCmd = cmd.ToLower().Trim();
 
-        // --- 1. COMANDO GLOBAL: CLEAR (Funciona siempre) ---
+        // 1. IMPRIMIR LO QUE EL USUARIO ESCRIBIÓ (Efecto Consola)
+        // Esto pone "Switch> enable" en la pantalla
+        AddLine(GetPrompt() + " " + cmd);
+
+        // --- CORRECCIÓN ENTER VACÍO ---
+        // Si el usuario solo dio Enter sin escribir nada...
+        if (string.IsNullOrEmpty(cleanCmd))
+        {
+            // No hacemos nada, solo limpiamos el input.
+            // Al haber hecho AddLine arriba, ya se imprimió el "Switch>" nuevo.
+            ResetInput();
+            return;
+        }
+
+        // --- COMANDOS GLOBALES ---
         if (cleanCmd == "clear" || cleanCmd == "cls")
         {
             outputText.text = "";
-            AddLine(GetPrompt()); // Vuelve a poner el prompt limpio
+            // No imprimimos prompt extra, el input lo hará al escribir
             ResetInput();
             return;
         }
 
-        // Mostramos lo que escribió el usuario (si no fue clear)
-        AddLine(GetPrompt() + " " + cmd);
-
-        // --- 2. COMANDO GLOBAL: HELP (Ayuda inteligente) ---
         if (cleanCmd == "help" || cleanCmd == "?")
         {
-            ProvideHint(); // Llamamos a la función de pistas
+            ProvideHint();
             ResetInput();
             return;
         }
 
-        // --- 3. MÁQUINA DE ESTADOS (Lógica del juego) ---
+        // --- LÓGICA DE ESTADOS ---
+        bool comandoValido = false; // Para saber si mostramos error o no
+
         switch (currentState)
         {
-            // NIVEL 1: >
             case ConsoleState.UserMode:
                 if (cleanCmd == "enable" || cleanCmd == "en")
                 {
                     currentState = ConsoleState.PrivilegedMode;
-                }
-                else
-                {
-                    ShowError();
+                    comandoValido = true;
                 }
                 break;
 
-            // NIVEL 2: #
             case ConsoleState.PrivilegedMode:
                 if (cleanCmd == "conf t" || cleanCmd == "configure terminal")
                 {
                     AddLine("Enter configuration commands, one per line. End with CNTL/Z.");
                     currentState = ConsoleState.GlobalConfig;
+                    comandoValido = true;
                 }
                 else if (cleanCmd == "exit")
                 {
                     currentState = ConsoleState.UserMode;
-                }
-                else
-                {
-                    ShowError();
+                    comandoValido = true;
                 }
                 break;
 
-            // NIVEL 3: (config)#
             case ConsoleState.GlobalConfig:
                 if (cleanCmd == "int fa0/1" || cleanCmd == "interface fastethernet 0/1")
                 {
                     currentState = ConsoleState.InterfaceConfig;
+                    comandoValido = true;
                 }
                 else if (cleanCmd == "exit")
                 {
                     currentState = ConsoleState.PrivilegedMode;
-                }
-                else
-                {
-                    ShowError();
+                    comandoValido = true;
                 }
                 break;
 
-            // NIVEL 4: (config-if)#
             case ConsoleState.InterfaceConfig:
                 if (cleanCmd == "switchport access vlan 10")
                 {
-                    // ¡VICTORIA!
+                    // VICTORIA
+                    comandoValido = true;
+                    nivelCompletado = true;
                     AddLine("Changes applied.");
                     AddLine("% LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up");
-                    AddLine("<color=green>NODE: ¡Excelente! El servidor ya está visible en la VLAN 10.</color>");
-                    WinLevel();
+                    AddNodeMessage("¡Excelente trabajo! Conexión restaurada.");
+                    AddLine("<color=orange>Redirigiendo al mapa...</color>");
+                    StartCoroutine(CargarMapaSequence());
                 }
                 else if (cleanCmd == "exit")
                 {
                     currentState = ConsoleState.GlobalConfig;
-                }
-                else
-                {
-                    ShowError();
+                    comandoValido = true;
                 }
                 break;
         }
 
+        // Si escribió algo pero no era válido para el estado actual
+        if (!comandoValido)
+        {
+            ShowError();
+        }
+
+        // Limpiamos y bajamos el scroll
         ResetInput();
     }
 
-    // Función que da pistas según dónde estés atascado
+    IEnumerator CargarMapaSequence()
+    {
+        inputField.DeactivateInputField();
+        yield return new WaitForSeconds(4f);
+        SceneManager.LoadScene(nombreEscenaMapa);
+    }
+
+    void AddNodeMessage(string message)
+    {
+        AddLine($"<color=#00FFFF>NODE: {message}</color>");
+    }
+
     void ProvideHint()
     {
-        string hint = "";
-        
         switch (currentState)
         {
             case ConsoleState.UserMode:
-                hint = "NODE: Necesitamos permisos de administrador. Escribe: <color=yellow>enable</color>";
+                AddNodeMessage("Escribe: <color=yellow>enable</color>");
                 break;
             case ConsoleState.PrivilegedMode:
-                hint = "NODE: Entra al modo de configuración global. Escribe: <color=yellow>conf t</color>";
+                AddNodeMessage("Escribe: <color=yellow>conf t</color>");
                 break;
             case ConsoleState.GlobalConfig:
-                hint = "NODE: Selecciona el puerto donde está el servidor. Escribe: <color=yellow>int fa0/1</color>";
+                AddNodeMessage("Escribe: <color=yellow>int fa0/1</color>");
                 break;
             case ConsoleState.InterfaceConfig:
-                hint = "NODE: Mueve este puerto a la VLAN de administración. Escribe: <color=yellow>switchport access vlan 10</color>";
+                AddNodeMessage("Escribe: <color=yellow>switchport access vlan 10</color>");
                 break;
         }
-        
-        AddLine(hint);
     }
 
     void ShowError()
     {
         AddLine("% Invalid input detected at '^' marker.");
-        AddLine("(Tip: Escribe 'help' si necesitas ayuda)");
     }
 
     void AddLine(string line)
     {
         outputText.text += line + "\n";
-        
-        // Auto-scroll
-        if(scrollRect != null) 
-        {
-            Canvas.ForceUpdateCanvases();
-            scrollRect.verticalNormalizedPosition = 0f;
-        }
+        ScrollToBottom(); // Llamamos al scroll mejorado
     }
 
     void ResetInput()
     {
         inputField.text = "";
         inputField.ActivateInputField();
-    }
-
-    void WinLevel()
-    {
-        Debug.Log("¡NIVEL COMPLETADO!");
-        // Aquí activas tu UI de victoria o cargas la siguiente escena
+        ScrollToBottom(); // Aseguramos scroll también al resetear
     }
 }
