@@ -34,16 +34,12 @@ public class MiniConsola : MonoBehaviour
         AddLine("Cisco IOS Software, C2960 Software (C2960-LANBASEK9-M)");
         AddLine("System Init... OK.");
         AddLine("");
-        AddNodeMessage("¡Alex! El servidor está aislado. Usa el comando 'help' si no sabes qué hacer."); 
+        AddNodeMessage("¡Alex! El servidor está aislado. Usa el comando 'help' si no sabes qué hacer.");
         AddLine("");
-        
-        // NO imprimimos el prompt aquí abajo todavía, 
-        // para que la primera línea la ponga el usuario al escribir.
-        
+
         inputField.onSubmit.AddListener(ProcessCommand);
         inputField.ActivateInputField();
-        
-        // Forzamos el scroll al inicio por si acaso
+
         ScrollToBottom();
     }
 
@@ -59,11 +55,9 @@ public class MiniConsola : MonoBehaviour
         }
     }
 
-    // --- CORRECCIÓN DEL AUTOSCROLL ---
+    // --- AUTOSCROLL ---
     public void ScrollToBottom()
     {
-        // Forzamos a Unity a actualizar los lienzos (Canvas) YA MISMO
-        // Esto recalcula el tamaño del texto antes de hacer el scroll.
         if (scrollRect != null)
         {
             StartCoroutine(ForceScrollDown());
@@ -72,16 +66,9 @@ public class MiniConsola : MonoBehaviour
 
     IEnumerator ForceScrollDown()
     {
-        // Esperamos al final del frame para asegurar que el texto se pintó
         yield return new WaitForEndOfFrame();
-        
-        // Forzamos actualización de layout
         Canvas.ForceUpdateCanvases();
-        
-        // Mandamos el scroll al fondo (0 es abajo, 1 es arriba)
         scrollRect.verticalNormalizedPosition = 0f;
-        
-        // A veces se necesita un segundo empujón frame siguiente
         Canvas.ForceUpdateCanvases();
     }
 
@@ -89,42 +76,38 @@ public class MiniConsola : MonoBehaviour
     {
         if (nivelCompletado) return;
 
-        // Limpiamos el comando (quitar espacios, minúsculas)
         string cleanCmd = cmd.ToLower().Trim();
 
-        // 1. IMPRIMIR LO QUE EL USUARIO ESCRIBIÓ (Efecto Consola)
-        // Esto pone "Switch> enable" en la pantalla
         AddLine(GetPrompt() + " " + cmd);
 
-        // --- CORRECCIÓN ENTER VACÍO ---
-        // Si el usuario solo dio Enter sin escribir nada...
         if (string.IsNullOrEmpty(cleanCmd))
         {
-            // No hacemos nada, solo limpiamos el input.
-            // Al haber hecho AddLine arriba, ya se imprimió el "Switch>" nuevo.
             ResetInput();
             return;
         }
 
-        // --- COMANDOS GLOBALES ---
+        // COMANDO CLEAR
         if (cleanCmd == "clear" || cleanCmd == "cls")
         {
             outputText.text = "";
-            // No imprimimos prompt extra, el input lo hará al escribir
             ResetInput();
             return;
         }
 
+        // COMANDO HELP
         if (cleanCmd == "help" || cleanCmd == "?")
         {
             ProvideHint();
+            AddLine(GetPrompt()); // nuevo prompt después del help
             ResetInput();
             return;
         }
 
-        // --- LÓGICA DE ESTADOS ---
-        bool comandoValido = false; // Para saber si mostramos error o no
+        bool comandoValido = false;
 
+        // ------------------------
+        //      LÓGICA DE ESTADOS
+        // ------------------------
         switch (currentState)
         {
             case ConsoleState.UserMode:
@@ -165,12 +148,16 @@ public class MiniConsola : MonoBehaviour
             case ConsoleState.InterfaceConfig:
                 if (cleanCmd == "switchport access vlan 10")
                 {
-                    // VICTORIA
                     comandoValido = true;
                     nivelCompletado = true;
                     AddLine("Changes applied.");
                     AddLine("% LINK-3-UPDOWN: Interface FastEthernet0/1, changed state to up");
                     AddNodeMessage("¡Excelente trabajo! Conexión restaurada.");
+
+                    PlayerPrefs.SetInt("current_level", 1);
+                    PlayerPrefs.Save();
+
+
                     AddLine("<color=orange>Redirigiendo al mapa...</color>");
                     StartCoroutine(CargarMapaSequence());
                 }
@@ -182,13 +169,18 @@ public class MiniConsola : MonoBehaviour
                 break;
         }
 
-        // Si escribió algo pero no era válido para el estado actual
+        // VALIDACIÓN
         if (!comandoValido)
         {
             ShowError();
         }
+        else
+        {
+            // Imprime el nuevo prompt automáticamente (si no ganó)
+            if (!nivelCompletado)
+                AddLine(GetPrompt());
+        }
 
-        // Limpiamos y bajamos el scroll
         ResetInput();
     }
 
@@ -204,21 +196,37 @@ public class MiniConsola : MonoBehaviour
         AddLine($"<color=#00FFFF>NODE: {message}</color>");
     }
 
+    // --- HELP AVANZADO (NODE) ---
     void ProvideHint()
     {
         switch (currentState)
         {
             case ConsoleState.UserMode:
-                AddNodeMessage("Escribe: <color=yellow>enable</color>");
+                AddNodeMessage(
+                    "Ahora estás en modo usuario: solo puedes ver información básica.\n" +
+                    "Debes escribir <color=yellow>enable</color> para entrar al modo privilegiado, donde podrás comenzar configuraciones."
+                );
                 break;
+
             case ConsoleState.PrivilegedMode:
-                AddNodeMessage("Escribe: <color=yellow>conf t</color>");
+                AddNodeMessage(
+                    "Estás en modo privilegiado: ya puedes ver y controlar más cosas del switch.\n" +
+                    "Escribe <color=yellow>conf t</color> para entrar al modo de configuración global."
+                );
                 break;
+
             case ConsoleState.GlobalConfig:
-                AddNodeMessage("Escribe: <color=yellow>int fa0/1</color>");
+                AddNodeMessage(
+                    "Modo configuración global: aquí defines qué parte del switch quieres configurar.\n" +
+                    "Escribe <color=yellow>int fa0/1</color> para editar la interfaz FastEthernet 0/1."
+                );
                 break;
+
             case ConsoleState.InterfaceConfig:
-                AddNodeMessage("Escribe: <color=yellow>switchport access vlan 10</color>");
+                AddNodeMessage(
+                    "Estás configurando la interfaz FastEthernet 0/1.\n" +
+                    "Para asignar la VLAN correcta, escribe <color=yellow>switchport access vlan 10</color>."
+                );
                 break;
         }
     }
@@ -231,13 +239,13 @@ public class MiniConsola : MonoBehaviour
     void AddLine(string line)
     {
         outputText.text += line + "\n";
-        ScrollToBottom(); // Llamamos al scroll mejorado
+        ScrollToBottom();
     }
 
     void ResetInput()
     {
         inputField.text = "";
         inputField.ActivateInputField();
-        ScrollToBottom(); // Aseguramos scroll también al resetear
+        ScrollToBottom();
     }
 }

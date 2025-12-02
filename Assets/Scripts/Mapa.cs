@@ -17,6 +17,10 @@ public class Mapa : MonoBehaviour
 
     int current_level, selected_level;
 
+        // POSICIONES REALES SEGÚN TUS BANDERAS
+    Vector2 posLvl1 = new Vector2(-2.52f, 1.95f);
+    Vector2 posLvl2 = new Vector2(3.58f, 1.78f);
+
     void Start()
     {
         musicSource = gameObject.AddComponent<AudioSource>();
@@ -38,13 +42,13 @@ public class Mapa : MonoBehaviour
         if (current_level == 0)
         {
             selected_level = 1;
-            transform.position = new Vector2(-4.3f, 1.5f);
+            transform.position = posLvl1;
             texto_level.SetText("Level 1");
         }
         else
         {
             selected_level = 2;
-            transform.position = new Vector2(-1.6f, 1.5f);
+            transform.position = posLvl2;
             texto_level.SetText("Level 2");
         }
     }
@@ -58,7 +62,7 @@ public class Mapa : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.RightArrow) && current_level >= 1)
             {
                 selected_level = 2;
-                transform.position = new Vector2(-1.6f, 1.5f);
+                transform.position = posLvl2;
                 texto_level.SetText("Level 2");
                 effectsSource.PlayOneShot(stepSound);
                 moved = true;
@@ -76,7 +80,7 @@ public class Mapa : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
                 selected_level = 1;
-                transform.position = new Vector2(-4.3f, 1.5f);
+               transform.position = posLvl1;
                 texto_level.SetText("Level 1");
                 effectsSource.PlayOneShot(stepSound);
                 moved = true;

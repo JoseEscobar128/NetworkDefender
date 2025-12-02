@@ -19,11 +19,11 @@ public class Title : MonoBehaviour
 
     public void BotonNewGame()
     {
-        //PlayerPrefs.SetInt("current_level", 0);
-        //PlayerPrefs.SetInt("num_vidas", 5);
+        PlayerPrefs.SetInt("current_level", 0);
+        PlayerPrefs.SetInt("num_vidas", 5);
         SceneManager.LoadScene(1);
     }
-/*
+
     public void BotonContinue()
     {
         if (PlayerPrefs.HasKey("current_level"))
@@ -37,7 +37,7 @@ public class Title : MonoBehaviour
             SceneManager.LoadScene(1);
         }
     }
-*/
+
 
     // Update is called once per frame
     void Update()
